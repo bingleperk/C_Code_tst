@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h> // rand(), srand() 사용을 위해 필요
+#include <time.h>
+
+int main()
+{
+    /*int BAR = 1;
+    int BELL = 2;
+    int LEMON = 3;
+    int CHERRY = 4; */
+
+    srand(time());
+
+    char slot[4][10] = {"BAR", "BELL","LEMON","CHERRY"};
+
+    int num1, num2, num3;
+
+
+    printf("Press Enter to play");
+
+
+    if( getchar() == '\n' )
+    {
+        num1 = (rand() % 4 +1);
+        num2 = (rand() % 4 +1);
+        num3 = (rand() % 4 +1);   //1~4 값 집어넣기 
+
+        printf("\nfirst one is %s", slot[num1 -1]);
+        printf("\nsecond one is %s", slot[num2 -1]);
+        printf("\nthird one is %s", slot[num3-1]);
+
+        if(num1 == 4 && num2 == 4 && num3 ==4) //다 체리 - 4
+        {
+            printf("\nJACKPOT");
+        }
+        else if(num1 == num2 && num2 == num3) //다 같지만 체리 아닌 경우 - not 4
+        {
+            printf("\nNICKEL");
+        }
+        else if(num1 == 4 || num2 ==4 || num3 ==4)
+        {
+            printf("\nOne Dime");
+        }
+        else
+        {
+            printf("\n꽝");
+        }
+
+    }
+    return 0;
+}
