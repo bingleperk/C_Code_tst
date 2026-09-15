@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+int main()
+{
+    char names[4][20];
+    char c;
+    for(int i=0; i<4; i++)
+    {
+        for (int j = 0; j<20; j++)
+        {
+            c = getchar();
+            names[i][j] = c;
+            if(c == '\n')
+            break;
+        }
+        
+    }
+
+    for(int i=0; i<4; i++)
+    {
+        printf("%s\n", names[i]);
+    }
+    return 0;
+}
