@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+
+int main()
+{
+    int str[100];
+    int c, i=0;;
+    while( (c=getchar()) != '\n' )
+    {
+        str[i] = c;
+        i++;
+    }
+    printf("%d", i);
+
+    return 0;
+}
+
