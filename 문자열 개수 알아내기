@@ -1,17 +1,38 @@
 #include <stdio.h>
 
+int word_count(char str[]);
+
+
 
 int main()
 {
-    int str[100];
+    char str[100];
     int c, i=0;;
     while( (c=getchar()) != '\n' )
     {
         str[i] = c;
         i++;
     }
+    str[i] = '\0';
     printf("%d", i);
+
+
+
+    printf("\n\n%d", word_count(str));
+
+    
+
 
     return 0;
 }
 
+int word_count(char str[])            //함수로 문자형 배열을 가져가서 글 개수 세기.
+ {
+    int num=0;
+    while(str[num] != '\0')
+    {
+        num++;
+    }
+
+    return num;
+}
