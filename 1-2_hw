@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int sec(int time, int min, int sec_)
+{
+    int total = 0;
+    total = (time * 3600) + (min *60) + sec_;
+    return total;
+}
+
+
+
+int main()
+{
+    
+    printf("Enter the time (h m s):");
+    int time, min, sec_;
+    scanf("%d %d %d", &time, &min, &sec_);
+    //sec(&time, &min, &sec);
+    
+    printf("total sec: %d seconds.", sec(time, min, sec_));
+
+    return 0;
+}
+
+//끝
