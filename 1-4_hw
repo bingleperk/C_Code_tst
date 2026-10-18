@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+void liquid(int *gallons, int *quarts, int *pints, int *cups, int *num)
+{
+    *gallons = *num / 16;
+    *num %= 16;
+
+    *quarts = *num / 4;
+    *num %= 4;
+
+    *pints = *num / 2;
+    *num %= 2;
+
+    *cups = *num;
+
+}
+
+
+
+
+int main()
+{
+    int num, gallons, quarts, pints, cups; //16 , 4 , 2, 1
+
+    printf("Enter total cups: ");
+    scanf("%d", &num); //컵 갯수 = num
+    int tot = num;
+
+    liquid(&gallons, &quarts, &pints, &cups, &num); //주소넘겨줌
+
+
+    printf("\n%d cups: %d gallons, %d quarts, %d pints, %d cups", tot, gallons, quarts, pints, cups);
+
+
+    return 0;
+}
