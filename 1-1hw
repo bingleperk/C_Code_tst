@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+float change(float price, int *quaters, int *dimes, int *nickels, int*pennies)
+{
+    int  = *price *100; //페니 단위로 맞춰주기           1.43달러 --> 143페니
+    //큰 단위부터 쪼개고 없애기   쿼터25 다임10 니켈5 페니1
+    *quaters = *price / 25;
+    *price -= *quaters *25;
+
+    *dimes = *price / 10;
+    *price -= *dimes * 10;
+
+    *nickels = *price / 5;
+    *price -= *nickels*5;
+
+    *nickels = *price;
+
+    return *price;
+}
+
+
+int main()
+{
+    int quaters, dimes, nickels, pennies;
+    float price;
+    printf("달러 단위의 금액을 입력하시오:");
+    scanf("%f", &price);
+    printf("%fdollors: ",change(&price, &quaters, &dimes, &nickels, &pennies));
+    printf("%d quaters, %d dimes,  %d nickels and %d pennies", quaters, dimes, nickels, pennies);
+    return 0;
+}
